@@ -1,0 +1,51 @@
+---
+import Section from "@/components/SectionStyle.astro";
+import { work } from "@cv";
+---
+
+<Section title="Experience">
+  <ul>
+    {
+      work.map(
+        ({ name, position, url, startDate, endDate, summary, highlights }) => {
+          const startExp = new Date(startDate).getFullYear();
+          const endExp =
+            endDate != null ? new Date(endDate).getFullYear() : "Presente";
+          const formattedExp =
+            startExp === endExp ? startExp : `${startExp} - ${endExp}`;
+
+          return (
+            <li>
+              <article>
+                <header>
+                  <div>
+                    <h3>{name}</h3>
+                    <h4>{position}</h4>
+                  </div>
+                  <time>{formattedExp}</time>
+                </header>
+                <footer>
+                  <p>{summary}</p>
+                </footer>
+              </article>
+            </li>
+          );
+        }
+      )
+    }
+  </ul>
+</Section>
+<style>
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4px;
+    }
+</style>

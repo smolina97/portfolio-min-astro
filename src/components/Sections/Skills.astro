@@ -1,0 +1,35 @@
+---
+import { skills } from "@cv";
+import Section from "@/components/SectionStyle.astro";
+---
+
+<Section title="Skills">
+  <ul>
+    {
+      skills.map(({ name }) => {
+        return (
+          <li>
+            <span>{name}</span>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Section>
+<style>
+    ul {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    li{
+        border-radius: 4px;
+        background: #eee;
+        color: black;
+        font-weight: 500;
+        padding: 0.2px 0.8px;
+        
+    }
+
+</style>
