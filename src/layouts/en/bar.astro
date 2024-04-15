@@ -1,0 +1,12 @@
+<select id="language-select">
+    <option value="/en">English</option>
+    <option value="/">Español</option>
+  </select>
+  
+  <script type="module">
+      const languageSelect = document.getElementById('language-select');
+      
+      languageSelect.addEventListener('change', function(event) {
+          window.location.href = event.target.value;
+      });
+  </script>

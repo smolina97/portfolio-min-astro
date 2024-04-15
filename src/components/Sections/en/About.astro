@@ -1,0 +1,10 @@
+---
+import Section from "@/components/SectionStyle.astro";
+import {UI , basics} from "@/location/en.json";
+const {about_section} = UI;
+const {summary} = basics;
+---
+
+<Section title={about_section}>
+  <p>{summary}</p>
+</Section>

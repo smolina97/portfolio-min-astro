@@ -1,0 +1,24 @@
+---
+import Section from "@/components/SectionStyle.astro";
+import { education , UI } from "@/location/en.json";
+const {education_section} = UI;
+---
+
+<Section title={education_section}>
+  <ul>
+    {
+      education.map(({ institution, url, area, studyType }) => {
+        return (
+          <li>
+            <div>
+              <h3>{institution}</h3>
+              <h4>{url}</h4>
+              <h4>{area}</h4>
+              <h4>{studyType}</h4>
+            </div>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Section>
