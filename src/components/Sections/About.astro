@@ -1,9 +1,11 @@
 ---
 import Section from "@/components/SectionStyle.astro";
-import { basics } from "@cv";
+import { basics , UI} from "@cv";
 const { summary } = basics;
+const { about_section } = UI;
+
 ---
 
-<Section title="About">
+<Section title={about_section}>
   <p>{summary}</p>
 </Section>

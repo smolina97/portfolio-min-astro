@@ -29,6 +29,17 @@
       }
     ]
   },
+  "UI" : {
+    "about_section": "Sobre mi",
+    "education_section": "Educación",
+    "experience_section": "Experiencia",
+    "skills_section": "Habilidades",
+    "projects_section": "Proyectos",
+    "references_section": "Referencias",
+    "contact_section": "Contacto",
+    "interests_section": "Intereses",
+    "languages_section": "Idiomas"
+  },
   "work": [
     {
       "name": "midudev",

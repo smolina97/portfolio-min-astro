@@ -1,9 +1,10 @@
 ---
 import Section from "@/components/SectionStyle.astro";
-import { education } from "@cv";
+import { education , UI } from "@cv";
+const {education_section} = UI;
 ---
 
-<Section title="Education">
+<Section title={education_section}>
   <ul>
     {
       education.map(({ institution, url, area, studyType }) => {

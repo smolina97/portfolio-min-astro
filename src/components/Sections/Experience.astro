@@ -1,9 +1,10 @@
 ---
 import Section from "@/components/SectionStyle.astro";
-import { work } from "@cv";
+import { work, UI} from "@cv";
+const {experience_section} = UI;
 ---
 
-<Section title="Experience">
+<Section title={experience_section}>
   <ul>
     {
       work.map(
