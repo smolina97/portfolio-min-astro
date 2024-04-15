@@ -1,0 +1,79 @@
+---
+import Section from "@/components/SectionStyle.astro";
+import { UI, projects } from "@/location/es.json";
+const { projects_section, projects_see } = UI;
+---
+
+<Section title={projects_section}>
+  <ul>
+    {
+      projects.map(({ name, description, highlights, url, github }) => {
+        return (
+          <li>
+            <article>
+              <header>
+                <a href={url} title={`${projects_see} ${name}`}>
+                    <h3>{name}</h3>
+                </a>
+                <p>{description}</p>
+              </header>
+              <footer>
+                  {
+                    highlights.map((highlight) => {
+                      return (
+                        <li>{highlight}</li>
+                      );
+                    })
+                  }
+              </footer>
+            </article>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Section>
+<style>
+    ul{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 16px;
+    }
+
+    article{
+      border-radius: 8px;
+      border: solid 1px #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 16px;
+    }
+
+    article header a:hover{
+        text-decoration: underline;
+    }
+
+    article header{
+        flex: 1;
+    }
+    
+    article header p{
+        font-size: 0.9rem;
+        margin-top: 8px;
+    }
+
+    footer{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      font-size: 0.6rem;
+    }
+
+    footer li{
+        border-radius: 4px;
+        background: #eee;
+        color: black;
+        font-weight: 500;
+        padding: 0.2px 0.8px;
+    }
+</style>
