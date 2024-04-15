@@ -2,15 +2,54 @@
 import { skills, UI } from "@/location/es.json";
 import Section from "@/components/SectionStyle.astro";
 const { skills_section } = UI;
+import Astro from "@/icons/astro.astro";
+import AWS from "@/icons/aws.astro";
+import c_sharp from "@/icons/c-sharp.astro";
+import CSS from "@/icons/css.astro";
+import Django from "@/icons/django.astro";
+import Flask from "@/icons/flask.astro";
+import Github from "@/icons/github.astro";
+import HTML from "@/icons/html.astro";
+import JavaScript from "@/icons/javascript.astro";
+import Laravel from "@/icons/laravel.astro";
+import MySQL from "@/icons/mysql.astro";
+import nodejs from "@/icons/nodejs.astro";
+import PHP from "@/icons/php.astro";
+import Python from "@/icons/python.astro";
+import TypeScript from "@/icons/typescript.astro";
+
+const skill_icon: Record<string, any> = {
+  Astro,
+  AWS,
+  "C#": c_sharp,
+  CSS,
+  Django,
+  Flask,
+  Github,
+  HTML,
+  JavaScript,
+  Laravel,
+  MySQL,
+  "Node.js": nodejs,
+  PHP,
+  Python,
+  TypeScript,
+};
 ---
 
 <Section title={skills_section}>
   <ul>
     {
       skills.map(({ name }) => {
+        const Icon = skill_icon[name];
         return (
           <li>
-            <span>{name}</span>
+            <div>
+              <span>
+                <Icon />
+              </span>
+              {name}
+            </div>
           </li>
         );
       })
@@ -18,19 +57,32 @@ const { skills_section } = UI;
   </ul>
 </Section>
 <style>
-    ul {
-        display: inline-flex;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
+  ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
-    li{
-        border-radius: 4px;
-        background: #eee;
-        color: black;
-        font-weight: 500;
-        padding: 0.2px 0.8px;
-        
-    }
+  li {
+    align-items: center;
+    background: #eee;
+    border-radius: 6px;
+    color: black;
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: 500;
+    gap: 4px;
+    padding: 0.2rem 0.6rem;
+  }
 
+  div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  span {
+    fill: black;
+    height: 16px;
+    width: 16px;
+  }
 </style>

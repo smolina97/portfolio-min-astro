@@ -12,10 +12,18 @@ const { projects_section, projects_see } = UI;
           <li>
             <article>
               <header>
-                <a href={url} title={`${projects_see} ${name}`}>
-                    <h3>{name}</h3>
+                <h3>
+                <a href={url} target="_blank" title={`${projects_see} ${name}`}>
+                    {name}  
                 </a>
+                {github && (
+                <a href={github} target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+                )}
+                </h3>
                 <p>{description}</p>
+                
               </header>
               <footer>
                   {

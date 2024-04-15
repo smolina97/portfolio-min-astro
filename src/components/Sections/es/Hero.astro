@@ -1,7 +1,8 @@
 ---
-import { basics } from "@/location/es.json";
-import Section from "@/components/SectionStyle.astro"
-const { name, label, image, email, phone, summary, location } = basics;
+import { basics, UI } from "@/location/es.json";
+import Section from "@/components/SectionStyle.astro";
+const { open_network, email_send, whatsapp_send} = UI;
+const { name, label, image, email, phone, profiles, location } = basics;
 const { city, region, country } = location;
 ---
 
@@ -13,18 +14,71 @@ const { city, region, country } = location;
       <span>
         {city} , {region}, {country}
       </span>
-      <img src={image} alt={name} />
+      {email} / {phone}
       <footer>
         {
-          email && (
-            <a
-              href="mailto:{email}"
-              title="Enviar email a {name} al correo {email}"
-              target="_blank"
-            />
-          )
-        },{phone}
-      </footer>
+          profiles.map(({ network, url, icon }) => {
+            let title;
+            if (network === "email"){
+              title = `${email_send} ${email}`
+            }else if (network === "whatsapp"){
+              title = whatsapp_send
+            }else{
+              title = `${open_network} ${network}`
+            }
+            return (
+              <a href={url} title={title} target="_blank">
+                <i class={icon}></i>
+              </a>
+            );
+          })
+        }
+        </a>
+        </footer>
     </div>
+      <figure><img src={image} alt={name} /></figure>
   </div>
 </Section>
+<style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-right: 32px;
+  }
+  footer a {
+    color: #777;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    padding: 4px;
+    height: 32px;
+    width: 32px;
+    border-radius: 6px;
+    margin-right: 5px;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  figure {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+    img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 128px;
+    border-radius: 16px;
+  }
+</style>

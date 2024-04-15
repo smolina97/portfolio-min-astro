@@ -4,7 +4,8 @@
     "label": "Desarrollador Full Stack - Universidad EAFIT",
     "image": "/me.webp",
     "email": "smolina_97@outlook.com",
-    "phone": "+54 3148108586",
+    "phone": "+57 3148108586",
+    "whatsapp_link": "https://wa.link/ea6b0a",
     "summary": "Ingeniero de sistemas cursando sus ultimos semestres en la Universidad EAFIT, con experiencia en el desarrollo de videojuegos en Unity 3D y desarrollo de backend en Python Django, actualmente me encuentro en la busqueda de nuevas oportunidades laborales en el area de desarrollo web.",
     "location": {
       "city": "Medellin",
@@ -13,26 +14,40 @@
     },
     "profiles": [
       {
-        "network": "LinkedIn",
-        "username": "midudev",
+        "network": "email",
+        "icon": "fa-solid fa-envelope",
+        "url": "mailto:smolina_97@outlook.com"
+      },
+
+      {
+        "network": "whatsapp",
+        "icon": "fa-brands fa-whatsapp",
+        "url": "https://wa.link/ea6b0a"
+      },
+      {
+        "network": "Linkedin",
+        "icon": "fa-brands fa-linkedin",
         "url": "https://linkedin.com/in/midudev"
       },
       {
-        "network": "X",
-        "username": "midudev",
-        "url": "https://x.com/midudev"
+        "network": "Twitter - X",
+        "icon": "fa-brands fa-x-twitter",
+        "url": "https://twitter.com/midudev"
       },
       {
         "network": "GitHub",
-        "username": "midudev",
+        "icon": "fa-brands fa-github",
         "url": "https://github.com/midudev"
       }
     ]
   },
   "UI" : {
+    "email_send" : "Enviar un correo al email",
+    "open_network" : "Abrir perfil de",
+    "whatsapp_send" : "Enviar mensaje de WhatsApp",
     "about_section": "Sobre mi",
     "education_section": "Educación",
-    "experience_section": "Experiencia",
+    "experience_section": "Experiencia Laboral",
     "skills_section": "Habilidades",
     "projects_section": "Proyectos",
     "projects_see" : "Ver el proyecto",
@@ -77,56 +92,46 @@
   }],
   "skills": [
     {
-      "name": "HTML",
-      "level": "Master"
+      "name": "HTML"
     },
     {
-      "name": "CSS",
-      "level": "Master"
+      "name": "CSS"
     },
     {
-      "name": "JavaScript",
-      "level": "Avanzado"
+      "name": "JavaScript"
     },
     {
-      "name": "TypeScript",
-      "level": "Avanzado"
+      "name": "TypeScript"
     },
     {
-      "name": "Nodejs",
-      "level": "Avanzado"
+      "name": "Node.js"
     },
     {
-      "name": "Python",
-      "level": "Avanzado"
+      "name": "Python"
     },
     {
-      "name": "Django",
-      "level": "Avanzado"
+      "name": "Django"
     },
     {
-      "name": "PHP",
-      "level": "Avanzado"
+      "name": "Flask"
     },
     {
-      "name": "Laravel",
-      "level": "Avanzado"
+      "name": "PHP"
     },
     {
-      "name": "Unity 3D",
-      "level": "Avanzado"
+      "name": "Laravel"
     },
     {
-      "name": "C#",
-      "level": "Avanzado"
+      "name": "AWS"
     },
     {
-      "name": "MySQL",
-      "level": "Avanzado"
+      "name": "C#"
     },
     {
-      "name": "GitHub",
-      "level": "Avanzado"
+      "name": "MySQL"
+    },
+    {
+      "name": "Github"
     }
   ],
   "languages": [
