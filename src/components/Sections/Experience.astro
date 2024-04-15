@@ -1,6 +1,6 @@
 ---
 import Section from "@/components/SectionStyle.astro";
-import { work, UI} from "@cv";
+import { work, UI} from "@/location/es.json";
 const {experience_section} = UI;
 ---
 
@@ -8,7 +8,7 @@ const {experience_section} = UI;
   <ul>
     {
       work.map(
-        ({ name, position, url, startDate, endDate, summary, highlights }) => {
+        ({ name, position, startDate, endDate, summary, highlights }) => {
           const startExp = new Date(startDate).getFullYear();
           const endExp =
             endDate != null ? new Date(endDate).getFullYear() : "Presente";
