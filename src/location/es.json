@@ -104,6 +104,9 @@
       "name": "TypeScript"
     },
     {
+      "name": "Astro"
+    },
+    {
       "name": "Node.js"
     },
     {

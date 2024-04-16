@@ -2,7 +2,7 @@
 import { skills, UI } from "@/location/es.json";
 import Section from "@/components/SectionStyle.astro";
 const { skills_section } = UI;
-import Astro from "@/icons/astro.astro";
+import astro from "@/icons/astro.astro";
 import AWS from "@/icons/aws.astro";
 import c_sharp from "@/icons/c-sharp.astro";
 import CSS from "@/icons/css.astro";
@@ -19,7 +19,7 @@ import Python from "@/icons/python.astro";
 import TypeScript from "@/icons/typescript.astro";
 
 const skill_icon: Record<string, any> = {
-  Astro,
+  "Astro": astro,
   AWS,
   "C#": c_sharp,
   CSS,
