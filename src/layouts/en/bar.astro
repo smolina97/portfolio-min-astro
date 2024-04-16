@@ -1,12 +1,44 @@
-<select id="language-select">
-    <option value="/en">English</option>
-    <option value="/">Español</option>
-  </select>
-  
-  <script type="module">
-      const languageSelect = document.getElementById('language-select');
-      
-      languageSelect.addEventListener('change', function(event) {
-          window.location.href = event.target.value;
-      });
-  </script>
+<header>
+  <nav>
+    <ul id="language-select">
+      <li data-value="/">Español</li>
+      <li data-value="/en">English</li>
+    </ul>
+  </nav>
+</header>
+
+<script type="module">
+  const languageSelect = document.getElementById("language-select");
+  const currentPath = window.location.pathname;
+
+  for (let li of languageSelect.children) {
+    if (li.dataset.value === currentPath) {
+      li.classList.add("selected");
+      li.style.pointerEvents = "none";
+    }
+  }
+
+  languageSelect.addEventListener("click", function (event) {
+    if (event.target.tagName.toLowerCase() === "li") {
+      window.location.href = event.target.dataset.value;
+    }
+  });
+</script>
+
+<style>
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    list-style-type: none;
+  }
+
+  nav ul li {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  nav ul li.selected {
+    color: gray;
+  }
+</style>

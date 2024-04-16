@@ -1,12 +1,89 @@
-<select id="language-select">
-    <option value="/">Español</option>
-    <option value="/en">English</option>
-  </select>
-  
-  <script type="module">
-      const languageSelect = document.getElementById('language-select');
-      
-      languageSelect.addEventListener('change', function(event) {
-          window.location.href = event.target.value;
-      });
-  </script>
+---
+import {UI} from "@/location/es.json"
+const {logo} = UI
+---
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a href="#home">Inicio</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+      </li>
+    </ul>
+    <ul>
+      <li id="print-button">Imprimir/Descargar</li>
+    </ul>
+    <ul id="language-select">
+      <li data-value="/">Español</li>
+      <li data-value="/en">English</li>
+    </ul>
+  </nav>
+</header>
+
+<script type="module">
+  const languageSelect = document.getElementById("language-select");
+  const currentPath = window.location.pathname;
+
+  for (let li of languageSelect.children) {
+    if (li.dataset.value === currentPath) {
+      li.classList.add("selected");
+      li.style.pointerEvents = "none";
+    }
+  }
+
+  languageSelect.addEventListener("click", function (event) {
+    if (event.target.tagName.toLowerCase() === "li") {
+      window.location.href = event.target.dataset.value;
+    }
+  });
+
+  document.getElementById("print-button").addEventListener("click", function () {
+    window.print();
+  });
+
+  const navLinks = document.querySelectorAll('nav ul li a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+<style>
+
+  header {
+    background-color: #f1f1f1;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+  }
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    list-style-type: none;
+  }
+
+  nav ul li {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  nav ul li.selected {
+    color: gray;
+  }
+</style>

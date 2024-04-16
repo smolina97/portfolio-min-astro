@@ -42,6 +42,7 @@
     ]
   },
   "UI" : {
+    "logo" : "Santiago Molina",
     "email_send" : "Enviar un correo al email",
     "open_network" : "Ver perfil de",
     "whatsapp_send" : "Enviar mensaje de WhatsApp",
