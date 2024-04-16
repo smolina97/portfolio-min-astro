@@ -7,18 +7,38 @@ const {education_section} = UI;
 <Section title={education_section}>
   <ul>
     {
-      education.map(({ institution, url, area, studyType }) => {
-        return (
+      education.map(({ institution, url, area, studyType,startDate, endDate }) => {
+        const startExp = new Date(startDate).getFullYear();
+        const endExp = endDate != null ? new Date(endDate).getFullYear() : "Presente";
+        const formattedExp = startExp === endExp ? startExp : `${startExp} - ${endExp}`;
+            return (
           <li>
-            <div>
-              <h3>{institution}</h3>
-              <h4>{url}</h4>
-              <h4>{area}</h4>
-              <h4>{studyType}</h4>
-            </div>
+            <article>
+            <header>
+              <div>
+                <a href={url} target="_blank"><h3>{institution}</h3></a> 
+                <h4>{area} - {studyType}</h4> 
+              </div>
+              <time>{formattedExp}</time>
+            </header>
+            </article>
           </li>
         );
       })
     }
   </ul>
 </Section>
+<style>
+  ul{
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+  }
+
+  header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+  }
+</style>

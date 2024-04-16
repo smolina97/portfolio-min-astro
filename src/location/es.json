@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Santiago Molina Mejia",
-    "label": "Desarrollador Full Stack - Universidad EAFIT",
+    "label": "Desarrollador Full Stack Universidad EAFIT",
     "image": "/me.webp",
     "email": "smolina_97@outlook.com",
     "phone": "+57 3148108586",
@@ -60,8 +60,8 @@
     {
       "name": "Idiomas EAFIT",
       "position": "Desarrollador de videojuegos con unity",
-      "startDate": "2019",
-      "endDate": "2019",
+      "startDate": "2019-1-1",
+      "endDate": "2019-1-1",
       "summary": "Hice parte de un equipo que desarrollo un videojuego en Unity 3D el cual estaba dedicado a ayudar a los niños con el aprendizaje del idioma ingles.",
       "highlights": [
         "Unity 3D",
@@ -72,8 +72,8 @@
     {
       "name": "Carvajal S.A - Universidad EAFIT",
       "position": "Desarrolador backend",
-      "startDate": "2020",
-      "endDate": "2020",
+      "startDate": "2020-1-1",
+      "endDate": "2020-1-1",
       "summary": "Hice parte de un equipo que programa un proyecto de datalabeling para la empresa Carvajal S.A, el cual consistia de un sistema OCR para la lectura de emociones de distintos comentarios, ayude con el desarrollo del backend el cual estaba en python django.",
       "highlights": [
         "Python",
@@ -87,8 +87,8 @@
     "url": "https://www.eafit.edu.co/",
     "area": "Ingenieria de sistemas",
     "studyType": "Pregrado",
-    "startDate": "2018",
-    "endDate": "En Curso"
+    "startDate": "2018-1-1",
+    "endDate": null
   }],
   "skills": [
     {
@@ -120,10 +120,7 @@
     },
     {
       "name": "Laravel"
-    },
-    {
-      "name": "AWS"
-    },
+    }, 
     {
       "name": "C#"
     },
@@ -132,6 +129,9 @@
     },
     {
       "name": "Github"
+    },
+    {
+      "name": "AWS"
     }
   ],
   "languages": [
