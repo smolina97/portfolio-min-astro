@@ -1,7 +1,7 @@
 ---
 import Section from "@/components/SectionStyle.astro";
 import { UI, projects } from "@/location/es.json";
-const { projects_section, projects_see } = UI;
+const { projects_section, projects_see, open_git } = UI;
 ---
 
 <Section title={projects_section}>
@@ -17,8 +17,8 @@ const { projects_section, projects_see } = UI;
                     {name}  
                 </a>
                 {github && (
-                <a href={github} target="_blank">
-                  <i class="fab fa-github"></i>
+                <a href={github} target="_blank" aria-label="Github">
+                  <i class="fab fa-github" title={open_git}  ></i>
                 </a>
                 )}
                 </h3>
@@ -57,26 +57,24 @@ const { projects_section, projects_see } = UI;
       padding: 16px;
     }
 
+    article header{
+        flex: 1;
+        font-size: 0.9rem;
+    }
+
     article header a:hover{
         text-decoration: underline;
     }
-
-    article header{
-        flex: 1;
-    }
-    
     article header p{
         font-size: 0.9rem;
         margin-top: 8px;
     }
-
     footer{
       display: flex;
       flex-wrap: wrap;
       gap: 4px;
-      font-size: 0.6rem;
+      font-size: 0.8rem;
     }
-
     footer li{
         border-radius: 4px;
         background: #eee;

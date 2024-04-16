@@ -43,8 +43,9 @@
   },
   "UI" : {
     "email_send" : "Enviar un correo al email",
-    "open_network" : "Abrir perfil de",
+    "open_network" : "Ver perfil de",
     "whatsapp_send" : "Enviar mensaje de WhatsApp",
+    "open_git" : "Ver Github del projecto",
     "about_section": "Sobre mi",
     "education_section": "Educación",
     "experience_section": "Experiencia Laboral",
@@ -62,24 +63,14 @@
       "position": "Desarrollador de videojuegos con unity",
       "startDate": "2019-1-1",
       "endDate": "2019-1-1",
-      "summary": "Hice parte de un equipo que desarrollo un videojuego en Unity 3D el cual estaba dedicado a ayudar a los niños con el aprendizaje del idioma ingles.",
-      "highlights": [
-        "Unity 3D",
-        "C#",
-        "Desarrollo de videojuegos"
-      ]
+      "summary": "Hice parte de un equipo que desarrollo un videojuego en Unity 3D el cual estaba dedicado a ayudar a los niños con el aprendizaje del idioma ingles."
     },
     {
       "name": "Carvajal S.A - Universidad EAFIT",
       "position": "Desarrolador backend",
       "startDate": "2020-1-1",
       "endDate": "2020-1-1",
-      "summary": "Hice parte de un equipo que programa un proyecto de datalabeling para la empresa Carvajal S.A, el cual consistia de un sistema OCR para la lectura de emociones de distintos comentarios, ayude con el desarrollo del backend el cual estaba en python django.",
-      "highlights": [
-        "Python",
-        "Django",
-        "Desarrollo de backend"
-      ]
+      "summary": "Hice parte de un equipo que programa un proyecto de datalabeling para la empresa Carvajal S.A, el cual consistia de un sistema OCR para la lectura de emociones de distintos comentarios, ayude con el desarrollo del backend el cual estaba en python django."
     }
   ],
   "education": [{

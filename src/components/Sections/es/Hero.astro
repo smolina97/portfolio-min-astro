@@ -1,7 +1,8 @@
 ---
 import { basics, UI } from "@/location/es.json";
 import Section from "@/components/SectionStyle.astro";
-const { open_network, email_send, whatsapp_send} = UI;
+import Image from "astro/components/Image.astro";
+const { open_network, email_send, whatsapp_send } = UI;
 const { name, label, image, email, phone, profiles, location } = basics;
 const { city, region, country } = location;
 ---
@@ -19,26 +20,35 @@ const { city, region, country } = location;
         {
           profiles.map(({ network, url, icon }) => {
             let title;
-            if (network === "email"){
-              title = `${email_send} ${email}`
-            }else if (network === "whatsapp"){
-              title = whatsapp_send
-            }else{
-              title = `${open_network} ${network}`
+            if (network === "email") {
+              title = `${email_send} ${email}`;
+            } else if (network === "whatsapp") {
+              title = whatsapp_send;
+            } else {
+              title = `${open_network} ${network}`;
             }
             return (
-              <a href={url} title={title} target="_blank">
-                <i class={icon}></i>
+              <a href={url} title={title} target="_blank" aria-label={network}>
+                <i class={icon} />
               </a>
             );
           })
         }
-        </a>
-        </footer>
+      </footer>
     </div>
-      <figure><img src={image} alt={name} /></figure>
-  </div>
+      <figure>
+        <Image
+          class="hero"
+          src={image}
+          alt={name}
+          width="170"
+          height="170"
+          loading="eager"
+        />
+      </figure>
+    </div>
 </Section>
+
 <style>
   .container {
     display: flex;
@@ -55,11 +65,11 @@ const { city, region, country } = location;
     padding-right: 32px;
   }
   .info h1 {
-   width: 80%;
+    width: 80%;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #333
-}
+    color: #333;
+  }
 
   footer a {
     color: #777;
@@ -75,17 +85,15 @@ const { city, region, country } = location;
     margin-top: 5px;
     transition: all 0.3s ease;
   }
-  
+
   figure {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto;
-    }
-    img {
-    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .hero {
     object-fit: cover;
-    width: 128px;
     border-radius: 16px;
   }
 </style>
