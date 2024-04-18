@@ -1,26 +1,42 @@
 ---
-import {UI} from "@/location/es.json"
-const {logo} = UI
+import { UI } from "@/location/es.json";
+const { nav_bar_ui } = UI;
+const {
+  bar_logo,
+  bar_home,
+  bar_education,
+  bar_experience,
+  bar_projects,
+  bar_print,
+} = nav_bar_ui;
 ---
-<header>
-  <nav>
-    <ul>
-      <li>
-        <a href="#home">Inicio</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-      </li>
-    </ul>
-    <ul>
-      <li id="print-button">Imprimir/Descargar</li>
-    </ul>
+
+<nav>
+  <div class="logo"><a href="#home">{bar_logo}</a></div>
+  <div class="hamburger-menu"><i class="fa-solid fa-bars"></i></div>
+  <ul class="menu">
+    <li><a href="#education">{bar_education}</a></li>
+    <li><a href="#experience">{bar_experience}</a></li>
+    <li><a href="#projects">{bar_projects}</a></li>
+  </ul>
+  <ul>
+    <li id="print-button" title={bar_print}>
+      <i class="fa-solid fa-download"></i><i class="fa-solid fa-print"></i>
+    </li>
     <ul id="language-select">
-      <li data-value="/">Español</li>
-      <li data-value="/en">English</li>
+      <li data-value="/">es</li>
+      <li data-value="/en">en</li>
     </ul>
-  </nav>
-</header>
+  </ul>
+</nav>
+<nav class="menu-movil">
+  <ul>
+    <li><a href="#home">{bar_home}</a></li>
+    <li><a href="#education">{bar_education}</a></li>
+    <li><a href="#experience">{bar_experience}</a></li>
+    <li><a href="#projects">{bar_projects}</a></li>
+  </ul>
+</nav>
 
 <script type="module">
   const languageSelect = document.getElementById("language-select");
@@ -39,51 +55,227 @@ const {logo} = UI
     }
   });
 
-  document.getElementById("print-button").addEventListener("click", function () {
-    window.print();
+  document
+    .getElementById("print-button")
+    .addEventListener("click", function () {
+      window.print();
+    });
+
+  const navLinks = document.querySelectorAll("nav ul li a, .logo a");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    });
   });
 
-  const navLinks = document.querySelectorAll('nav ul li a');
+  var hamburgerMenu = document.querySelector(".hamburger-menu");
+  var menuMovil = document.querySelector(".menu-movil");
+  var navElement = document.querySelector("nav");
 
-navLinks.forEach(link => {
-  link.addEventListener('click', function(event) {
-    event.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-    targetElement.scrollIntoView({ behavior: 'smooth' });
+  hamburgerMenu.addEventListener("click", function () {
+    if (menuMovil.style.visibility === "visible") {
+      menuMovil.classList.remove('slide-in');
+      menuMovil.classList.add('slide-out');
+
+      setTimeout(function() {
+            menuMovil.style.visibility = "hidden"
+        }, 300);
+
+      } else {
+      menuMovil.style.visibility = "visible";
+      menuMovil.classList.remove('slide-out');
+      menuMovil.classList.add('slide-in');
+    }
   });
-});
+
+  document.addEventListener("click", function (event) {
+    var isClickInsideMenu = menuMovil.contains(event.target);
+    var isClickInsideNav = navElement.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickInsideNav) {
+      menuMovil.classList.remove('slide-in');
+      menuMovil.classList.add('slide-out');
+
+      setTimeout(function() {
+            menuMovil.style.visibility = "hidden"
+        }, 300);
+    }
+  });
+  
 </script>
 
 <style>
-
-  header {
-    background-color: #f1f1f1;
-    padding: 10px;
-    position: fixed;
-    top: 0;
+  .bar {
+    font-weight: bold;
   }
-  nav{
+  #language-select li[data-value="/"],
+  #language-select li[data-value="/en"] {
+    margin: 2px; /* Elimina el margen */
+  }
+
+  nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-bottom: 2px solid #c3c0c0;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: #f1f1f1;
+    padding: 0.5rem;
+    font-weight: bold;
+  }
+  nav .menu {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   nav ul {
     display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-    list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav ul .logo {
+    gap: 10rem;
   }
 
-  nav ul li {
+  nav li {
+    margin: 0 0.5rem;
+    border: 1px transparent solid;
+    padding: 0.1rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    border-radius: 8px;
+  }
+  nav li:hover {
     cursor: pointer;
-    margin-left: 10px;
+    background: #000000;
+    border: solid 1px #000000;
+    transition: all 0.3s ease;
+    color: white;
   }
 
-  nav ul li.selected {
+  nav li:hover a {
+    color: white;
+    transition: all 0.3 s ease;
+  }
+  nav li.selected {
     color: gray;
+    padding-bottom: 3px;
+    border-bottom: 1px solid black;
+    border-radius: 2px;
+  }
+  #print-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #print-button i:first-child {
+    margin-right: 10px; /* Ajusta el valor según el espacio deseado */
+  }
+
+  .menu-movil {
+    visibility: hidden;
+  }
+
+  .hamburger-menu {
+    visibility: hidden;
+  }
+  @media (max-width: 723px) {
+    .menu {
+      visibility: hidden;
+    }
+
+    .logo {
+      visibility: hidden;
+    }
+
+    .hamburger-menu {
+      visibility: visible;
+      position: fixed;
+      border: solid 1px transparent;
+      border-radius: 8px;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hamburger-menu:hover {
+      cursor: pointer;
+      background: #000000;
+      border: solid 1px #000000;
+      transition: all 0.3s ease;
+      color: white;
+    }
+
+    @keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideOutToLeft {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .menu-movil.slide-in {
+      animation: 0.3s ease-out 0s 1 slideInFromLeft;
+    }
+
+    .menu-movil.slide-out {
+      animation: 0.3s ease-in 0s 1 slideOutToLeft forwards;
+    }
+    .menu-movil {
+      display: inline-block;
+      position: fixed;
+      width: max-content;
+      top: 45px;
+      border: solid 2px #c3c0c0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+    }
+    .menu-movil ul {
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .menu-movil ul li {
+      width: 100%;
+      padding: 1rem;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 300px) {
+      .menu-movil {
+        top: 66px;
+      }  
+  }
+  
+  @media (min-width: 724px) {
+    .menu-movil {
+      display: none;
+    }
   }
 </style>

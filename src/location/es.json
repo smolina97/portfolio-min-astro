@@ -41,22 +41,37 @@
       }
     ]
   },
-  "UI" : {
-    "logo" : "Santiago Molina",
-    "email_send" : "Enviar un correo al email",
-    "open_network" : "Ver perfil de",
-    "whatsapp_send" : "Enviar mensaje de WhatsApp",
-    "open_git" : "Ver Github del projecto",
+  "UI": { 
     "about_section": "Sobre mi",
     "education_section": "Educación",
     "experience_section": "Experiencia Laboral",
     "skills_section": "Habilidades",
     "projects_section": "Proyectos",
-    "projects_see" : "Ver el proyecto",
     "references_section": "Referencias",
     "contact_section": "Contacto",
     "interests_section": "Intereses",
-    "languages_section": "Idiomas"
+    "languages_section": "Idiomas",
+
+    "nav_bar_ui":{
+      "bar_logo": "Santiago Molina",
+      "bar_home": "Inicio",
+      "bar_education": "Educación",
+      "bar_experience": "Experiencia",
+      "bar_projects": "Proyectos",
+      "bar_print": "Imprime o Descarga el portfolio en PDF"
+    },
+    
+    "hero_ui":{
+      "email_send": "Enviar un correo al email",
+      "open_network": "Ver perfil de",
+      "whatsapp_send": "Enviar mensaje de WhatsApp"
+    },
+
+    "projects_ui": {
+      "open_git": "Ver Github del projecto",
+      "projects_see": "Ver el proyecto"
+    }
+  
   },
   "work": [
     {
@@ -74,14 +89,16 @@
       "summary": "Hice parte de un equipo que programa un proyecto de datalabeling para la empresa Carvajal S.A, el cual consistia de un sistema OCR para la lectura de emociones de distintos comentarios, ayude con el desarrollo del backend el cual estaba en python django."
     }
   ],
-  "education": [{
-    "institution": "Universidad EAFIT",
-    "url": "https://www.eafit.edu.co/",
-    "area": "Ingenieria de sistemas",
-    "studyType": "Pregrado",
-    "startDate": "2018-1-1",
-    "endDate": null
-  }],
+  "education": [
+    {
+      "institution": "Universidad EAFIT",
+      "url": "https://www.eafit.edu.co/",
+      "area": "Ingenieria de sistemas",
+      "studyType": "Pregrado",
+      "startDate": "2018-1-1",
+      "endDate": null
+    }
+  ],
   "skills": [
     {
       "name": "HTML"
@@ -115,7 +132,7 @@
     },
     {
       "name": "Laravel"
-    }, 
+    },
     {
       "name": "C#"
     },
@@ -139,23 +156,24 @@
       "fluency": "Intermedio - Nivel B1"
     }
   ],
-  "interests": [{
-    "name": "Video Games",
-    "icon": ""
-  }],
-  "references": [{
-    "name": "Jane Doe",
-    "reference": "Reference…"
-  }],
+  "interests": [
+    {
+      "name": "Video Games",
+      "icon": ""
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }
+  ],
   "projects": [
     {
       "name": "mars.codes",
       "isActive": true,
       "description": "Historia interactiva con retos de programación para viajar a Marte",
-      "highlights": [
-        "Elige tu propia aventura",
-        "En desarrollo"
-      ],
+      "highlights": ["Elige tu propia aventura", "En desarrollo"],
       "url": "https://mars.codes"
     },
     {
@@ -171,39 +189,27 @@
     {
       "name": "Codember",
       "description": "Juego interactivo de programación con retos y secretos",
-      "highlights": [
-        "+2000 usuarios activos",
-        "Retos para cualquier lenguaje"
-      ],
+      "highlights": ["+2000 usuarios activos", "Retos para cualquier lenguaje"],
       "url": "https://codember.dev"
     },
     {
       "name": "codi.link",
       "description": "Playground de código HTML, CSS y JavaScript para compartir",
-      "highlights": [
-        "100k visitas al mes",
-        "Desarrollado por la comunidad"
-      ],
+      "highlights": ["100k visitas al mes", "Desarrollado por la comunidad"],
       "url": "https://codi.link",
       "github": "https://github.com/midudev/codi.link"
     },
     {
       "name": "Pruebas Técnicas",
       "description": "Lista de pruebas técnicas de empresas para practicar programación",
-      "highlights": [
-        "100% gratuito",
-        "+500 soluciones de la comunidad"
-      ],
+      "highlights": ["100% gratuito", "+500 soluciones de la comunidad"],
       "url": "https://pruebastecnicas.com",
       "github": "https://github.com/midudev/pruebas-tecnicas"
     },
     {
       "name": "miduConf",
       "description": "Conferencia de programación en streaming para la comunidad hispanohablante con charlas top",
-      "highlights": [
-        "+15k tickets repartidos",
-        "+50k espectadores en directo"
-      ],
+      "highlights": ["+15k tickets repartidos", "+50k espectadores en directo"],
       "url": "https://miduconf.com"
     }
   ]
