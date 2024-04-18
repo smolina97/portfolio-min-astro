@@ -12,7 +12,7 @@ const {
 } = nav_bar_ui;
 ---
 
-<nav>
+<nav class="navbar">
   <div class="logo"><a href="#home">{bar_logo}</a></div>
   <div class="hamburger-menu"><i class="fa-solid fa-bars"></i></div>
   <ul class="menu">
@@ -119,7 +119,7 @@ const {
     margin: 2px; /* Elimina el margen */
   }
 
-  nav {
+  .navbar {
     position: fixed;
     left: 0;
     right: 0;
@@ -133,6 +133,7 @@ const {
     align-items: center;
     padding: 0.5rem;
     font-weight: bold;
+    height: 47px;
   }
   nav .menu {
     display: flex;
@@ -143,7 +144,6 @@ const {
 
   nav ul {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
   }
   nav ul .logo {
@@ -196,18 +196,21 @@ const {
     display: none;
   }
   @media (max-width: 723px) {
+    nav{
+      display: flex;
+      justify-content: space-between;    
+    }
     .menu {
-      visibility: hidden;
-      display: none;
+      display: none !important;
     }
 
     .logo {
       visibility: hidden;
+      display: none;
     }
 
     .hamburger-menu {
       visibility: visible;
-      position: fixed;
       border: solid 1px transparent;
       border-radius: 8px;
       padding: 0.5rem;
@@ -258,6 +261,7 @@ const {
       border-radius: 8px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(10px);
+      left: 0;
     }
     .menu-movil ul {
       justify-content: flex-start;
