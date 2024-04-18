@@ -1,5 +1,6 @@
 ---
 import { UI } from "@/location/es.json";
+import Themeicon from "@/components/buttons/themeicon.astro";
 const { nav_bar_ui } = UI;
 const {
   bar_logo,
@@ -23,6 +24,7 @@ const {
     <li id="print-button" title={bar_print}>
       <i class="fa-solid fa-download"></i><i class="fa-solid fa-print"></i>
     </li>
+    <Themeicon /> 
     <ul id="language-select">
       <li data-value="/">es</li>
       <li data-value="/en">en</li>
